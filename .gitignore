@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+dist/
 
 # Executables
 # (If you WANT to push your exe, make sure it is NOT listed here)

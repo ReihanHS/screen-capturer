@@ -1,0 +1,31 @@
+name: Build and Release
+on:
+  push:
+    tags:
+      - 'v*' # This triggers the build whenever you push a tag like v1.0.0
+
+jobs:
+  release:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        # This tells GitHub to start 3 separate computers (Mac, Ubuntu, Windows)
+        os: [macos-latest, ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and Publish
+        run: npm run publish
+        env:
+          # This gives the script permission to upload files to your repo
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

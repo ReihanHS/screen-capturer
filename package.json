@@ -1,6 +1,6 @@
 {
   "name": "screen-capturer",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "Simple Screen Capturing App using Electron",
   "license": "ISC",
   "author": "",
@@ -27,5 +27,9 @@
     "electron": "^39.2.7",
     "electron-builder": "^26.0.12",
     "nodemon": "^3.1.11"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ReihanHS/screen-capturer.git"
+  } 
 }

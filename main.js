@@ -23,6 +23,9 @@ app.whenReady().then(() => {
             window.show()
         }
     })
+    tray.on("right-click", () => {
+        tray.popUpContextMenu()
+    })
 
     const menuTemplate = [
         {
@@ -37,6 +40,7 @@ app.whenReady().then(() => {
     tray.setContextMenu(contextMenu)
 
     window.loadFile("index.html")
+    window.show()
 
     ipcMain.on("capture-screen", async () => {
         const screenSize = screen.getPrimaryDisplay().workAreaSize;

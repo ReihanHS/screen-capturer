@@ -24,6 +24,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Fix permissions (Linux only)
+        if: matrix.os == 'ubuntu-latest'
+        run: chmod +x node_modules/app-builder-bin/linux/x64/app-builder
+
       - name: Build and Publish
         run: npm run publish
         env:

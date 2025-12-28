@@ -1,0 +1,6 @@
+# Dependencies
+node_modules/
+
+# Executables
+# (If you WANT to push your exe, make sure it is NOT listed here)
+# *.exe

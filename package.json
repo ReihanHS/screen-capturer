@@ -14,7 +14,7 @@
   },
   "build": {
     "appId": "com.ae.screencapturer",
-    "productName": "Reihan's Screen Capturer",
+    "productName": "Reihans Screen Capturer",
     "files": [
       "**/*"
     ],

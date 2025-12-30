@@ -43,6 +43,8 @@ app.whenReady().then(() => {
     window.show()
 
     ipcMain.on("capture-screen", async () => {
+        window.hide()
+        
         const screenSize = screen.getPrimaryDisplay().workAreaSize;
         const screens = await desktopCapturer.getSources({
             types: ["screen"],
@@ -59,6 +61,7 @@ app.whenReady().then(() => {
 
         fs.writeFile(filePath, img, (err) => {
             shell.openExternal(`file://${filePath}`)
+            window.show()
         })
     })
 })
